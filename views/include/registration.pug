@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+    .reg-box
+        .header
+            h2 Registration
+        form(action="/auth_reg", method="post")
+            .form-group
+                label(for="fullname") 
+                input(type="rext" name="fullname" class="form-control"
+                placeholder="Enter the fullname", pattern=".{2,}", required)
+            .form-group
+                label(for="email") 
+                input(type="email" name="email" class="form-control"
+                placeholder="Enter the email", pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$", required)
+            .form-group
+                label(for="password") 
+                input(type="password" name="password" class="form-control"
+                placeholder="Enter atleast 6 character of password", pattern=".{6,}", required)
+            .form-group
+                label(for="cpassword") 
+                input(type="password" name="cpassword" class="form-control" placeholder="Enter the confirm password")
+            
+            button(type="submit" class="btn btn-primary") Submit
